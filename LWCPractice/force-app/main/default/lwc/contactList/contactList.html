@@ -1,0 +1,11 @@
+<template>
+    <div style="height: 300px;">
+        <template if:true={contacts.data}>
+        <lightning-datatable
+                key-field="id"
+                data={contacts.data}
+                columns={columns}>
+        </lightning-datatable>
+    </template>
+    </div>
+</template>

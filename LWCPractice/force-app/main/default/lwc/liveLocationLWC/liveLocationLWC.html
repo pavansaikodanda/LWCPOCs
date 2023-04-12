@@ -1,0 +1,8 @@
+<template>
+    <lightning-button label="Get Current Location" onclick={handleGeoLocation} class="slds-m-left_x-small"></lightning-button>
+    <br/>
+    <br/>
+    <template if:true={showMap}>
+        <lightning-map map-markers={mapMarkers} zoom-level="15"></lightning-map>
+    </template>
+</template>

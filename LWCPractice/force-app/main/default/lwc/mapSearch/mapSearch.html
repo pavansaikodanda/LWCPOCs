@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Enter location" onchange={handleLocationText}
+            value={locationValue}></lightning-input>
+        <br />
+        <lightning-button label="Search" title="Non-primary action" onclick={handleClick}
+            class="slds-m-left_x-small"></lightning-button>
+    </div>
+    <template if:true={showMap}>
+        <div>
+            <lightning-map map-markers={mapMarkers} markers-title={locationValue} zoom-level="15"></lightning-map>
+        </div>
+    </template>
+</template>
