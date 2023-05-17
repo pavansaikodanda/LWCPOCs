@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="file" label="Attachment" onchange={loadImage}></lightning-input>
+    </div>
+    <p><label for="file" style="cursor: pointer;">Uploaded Image</label></p>
+    <img src="" class="uploadedImage" /><br>
+
+    <div class="camera-wrapper">
+        <lightning-button label="Open Camera" class="slds-m-left_xx-small" onclick={initCamera}></lightning-button>
+        <lightning-button label="Close Camera" class="slds-m-left_xx-small" onclick={stopCamera}></lightning-button>
+        <lightning-button label="Capture Image" class="slds-m-left_xx-small" onclick={captureImage}></lightning-button>
+        <lightning-button label="Compare Images" class="slds-m-left_xx-small" onclick={compareImage}></lightning-button>
+        <lightning-button label="Convert to Cartoon" class="slds-m-left_xx-small" onclick={convertToCartoon}></lightning-button>
+        <p><strong>{Result}</strong></p>
+    </div>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <video class="videoElement" autoplay></video>
+            <canvas class="slds-hide canvas"></canvas>
+        </div>
+        <div class="slds-col">
+            <img src="" class="slds-hide imageElement" alt="captured image" />
+        </div>
+    </div>
+</template>
