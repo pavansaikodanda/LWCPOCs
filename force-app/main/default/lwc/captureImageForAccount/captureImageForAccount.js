@@ -6,7 +6,10 @@ export default class CaptureImageForAccount extends LightningElement {
     @api recordId;
     isModalOpen = false;
     isImageCaptured = false;
+    showRetakeButton = false;
     videoElement;
+    okButtonInvisible = false;
+    showCaptureButton = false;
     canvasElement;
     capturedImage;
 
@@ -23,7 +26,7 @@ export default class CaptureImageForAccount extends LightningElement {
     
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             try {
-                this.videoElement.srcObject = await navigator.mediaDevices.getUserMedia({ video: { width: 300, height: 400 }, audio: false });
+                this.videoElement.srcObject = await navigator.mediaDevices.getUserMedia({ video: { width: 400, height: 400 }, audio: false });
             } catch (error) {
                 console.error('Error accessing the camera: ', JSON.stringify(error));
             }
@@ -41,6 +44,9 @@ export default class CaptureImageForAccount extends LightningElement {
             this.capturedImage = this.canvasElement.toDataURL('image/png');
             this.isImageCaptured = true;
             this.stopCamera();
+            this.showRetakeButton = true;
+            this.okButtonInvisible = true;
+            this.showCaptureButton = true;
         }
     }
 
@@ -77,6 +83,9 @@ export default class CaptureImageForAccount extends LightningElement {
     }
 
     retakeImage() {
+        this.showRetakeButton = false;
+        this.okButtonInvisible = false;
+        this.showCaptureButton = false;
         this.stopCamera();
         this.isModalOpen = false;
         this.initCamera();

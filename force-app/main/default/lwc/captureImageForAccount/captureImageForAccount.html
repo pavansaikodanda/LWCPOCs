@@ -13,15 +13,22 @@
                     </header>
                     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
                         <template if:false={isImageCaptured}>
-                            <video class="videoElement" autoplay></video>
+                            <video class="videoElement slds-align_absolute-center" autoplay></video>
                         </template>
                         <template if:true={isImageCaptured}>
-                            <img src={capturedImage} alt="Captured Image" />
+                            <img src={capturedImage} class="slds-align_absolute-center" alt="Captured Image" />
                         </template>
                     </div>
                     <footer class="slds-modal__footer">
-                        <lightning-button label="Retake" onclick={retakeImage}></lightning-button>
-                        <lightning-button variant="brand" label="Ok" onclick={saveImage}></lightning-button>
+                        <template if:true={showRetakeButton}>
+                            <lightning-button label="Retake" class="slds-float_left" onclick={retakeImage}></lightning-button>
+                        </template>
+                        <template if:false={okButtonInvisible}>
+                            <lightning-button variant="brand" class="slds-float_right" label="Capture" onclick={captureImage}></lightning-button>
+                        </template>
+                        <template if:true={showCaptureButton}>
+                            <lightning-button label="Ok" variant="brand" class="slds-float_right" onclick={saveImage}></lightning-button>
+                        </template>
                     </footer>
                 </div>
             </section>
