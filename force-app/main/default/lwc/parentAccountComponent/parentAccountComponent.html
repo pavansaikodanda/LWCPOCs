@@ -1,0 +1,8 @@
+<template>
+    <template if:true={showButton}>
+    <lightning-button label="show Contacts" onclick={handleClick}></lightning-button>
+</template>
+    <template if:true={showContactData}>
+    <c-child-contact-component account-record-id = {recordId}></c-child-contact-component>
+</template>
+</template>

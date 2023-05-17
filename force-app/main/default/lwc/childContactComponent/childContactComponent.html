@@ -1,0 +1,7 @@
+<template>
+    <p>ChildComponent</p>
+    <p>{AccountId}</p>
+    <template for:each={wiredContacts.data} for:item="Contact">
+        <p key={Contact.Id}>{Contact.Name}</p>
+    </template>
+</template>

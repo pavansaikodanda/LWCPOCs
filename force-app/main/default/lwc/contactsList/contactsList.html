@@ -1,0 +1,10 @@
+<template>
+  <lightning-card title="Contacts">
+    <template for:each={contacts.data} for:item="acc">
+      <p key={acc.id}>
+        {acc.Name}
+      </p>
+    </template>
+    
+  </lightning-card>
+</template>

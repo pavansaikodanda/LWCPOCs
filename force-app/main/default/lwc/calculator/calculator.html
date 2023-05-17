@@ -1,0 +1,14 @@
+<template>
+ <lightning-input label="Enter a Number" 
+ name="Number1" onchange={handleNumber1Change}></lightning-input>
+ <lightning-input label="Enter another Number" name="Number2" onchange={handleNumber2Change}></lightning-input>
+ <lightning-button-group>
+  <lightning-button icon-name= "utility:add" title="Add" onclick={handleAddition}></lightning-button> &nbsp;
+  <lightning-button icon-name="utility:dash" title="subtract" onclick={handleSubtraction}></lightning-button> &nbsp;
+  <lightning-button icon-name="utility:close" title="Multiply" onclick={handleMutiplication}></lightning-button> &nbsp;
+  <lightning-button label="/" title="Division" onclick={handleDivision}></lightning-button>
+
+ </lightning-button-group>
+ <lightning-input label="Result" read-only="true" value={result}></lightning-input>
+
+</template>

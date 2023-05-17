@@ -1,0 +1,7 @@
+<template>
+    "PArENT COMpONENT"
+    <c-contact-child-component onidfromchild={handleId}></c-contact-child-component>
+    <template for:each={accountdata} for:item="Account">
+        <p key={Account.Id}>{Account.Account.Name}</p>
+    </template>
+</template>
