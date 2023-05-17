@@ -1,3 +1,7 @@
+/*
+Author: PAVANSAIKODANDA
+*/
+
 import { LightningElement, wire, api } from 'lwc';
 import getSkills from '@salesforce/apex/lwcClientSkillsController.getSkills';
 import createClientSkills from '@salesforce/apex/lwcClientSkillsController.createClientSkills';
@@ -10,6 +14,7 @@ export default class CreateClientSkills extends LightningElement {
   clientSkills = [];
 
   connectedCallback() {
+   console.log('pavansaikodanda')
     Promise.all([
       getSkills(),
       getClientSkills({ contactId: this.recordId })
