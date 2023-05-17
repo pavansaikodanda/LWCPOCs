@@ -1,0 +1,16 @@
+<template>
+    <lightning-accordion>
+        <template for:each={skillsData} for:item="category">
+            <lightning-accordion-section key={category.label} label={category.label}>
+                <lightning-checkbox-group
+                    name="Checkbox Group"
+                    options={category.skills}
+                    value={category.selectedValues}
+                    data-category={category.label}
+                    onchange={handleChange}>
+                </lightning-checkbox-group>
+            </lightning-accordion-section>
+        </template>
+    </lightning-accordion>
+    <lightning-button variant="brand" label="Save" title="Save" onclick={save} class="slds-m-left_x-small"></lightning-button>
+</template>
