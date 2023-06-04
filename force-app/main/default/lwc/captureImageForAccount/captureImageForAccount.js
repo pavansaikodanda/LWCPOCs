@@ -21,12 +21,17 @@ export default class CaptureImageForAccount extends LightningElement {
     async initCamera() {
         this.isModalOpen = true;
         this.isImageCaptured = false;
+        this.showRetakeButton = false;
+        this.okButtonInvisible = false;
+        this.showCaptureButton = false;
         await new Promise(resolve => setTimeout(resolve, 0));
         this.videoElement = this.template.querySelector('.videoElement');
     
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             try {
+                console.log('navigator',navigator.mediaDevices);
                 this.videoElement.srcObject = await navigator.mediaDevices.getUserMedia({ video: { width: 400, height: 400 }, audio: false });
+                
             } catch (error) {
                 console.error('Error accessing the camera: ', JSON.stringify(error));
             }
@@ -69,7 +74,7 @@ export default class CaptureImageForAccount extends LightningElement {
                     variant: 'success',
                 }),
             );
-            window.location.reload();
+           // window.location.reload();
         })
         
         .catch(error => {

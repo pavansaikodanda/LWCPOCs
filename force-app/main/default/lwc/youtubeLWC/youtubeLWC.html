@@ -1,0 +1,32 @@
+<template>
+    <div class="outer-container">
+        <lightning-card>
+            <div class="search-container">
+                <img src="https://thumbs.dreamstime.com/b/youtube-premium-logo-video-sharing-website-icon-eps-vector-illustration-258896955.jpg?w=1600" class="premium-logo" alt="Youtube Premium Logo">
+                <div class="input-container">
+                    <lightning-input variant="label-hidden" class="search-input" type="text" placeholder="Search" maxlength="10000" onchange={updateSearchText}></lightning-input>
+                    <lightning-button-icon icon-name="utility:search" variant="bare" onclick={handleYoutubeSearch} class="slds-input__icon slds-input__icon_right search-button"></lightning-button-icon>
+                </div>
+            </div>
+        </lightning-card>
+        <br/>
+        <div class="layout-container">
+            <div class="main-video">
+                <iframe width="896" height="504" src={mainVideoUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h2>{mainVideoTitle}</h2>
+                <p>{mainVideoDescription}</p>
+            </div>
+            <div class="other-videos">
+                <template for:each={videos} for:item="video">
+                    <div key={video.id.videoId} class="video">
+                        <button class="thumbnail-button" onclick={handleVideoClick} data-id={video.id.videoId}>
+                            <img src={video.snippet.thumbnails.default.url} alt="video thumbnail" class="thumbnail-image">
+                            <div class="play-button"></div>
+                        </button>
+                        <h3>{video.snippet.title}</h3>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

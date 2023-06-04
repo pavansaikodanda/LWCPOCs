@@ -1,0 +1,95 @@
+.outer-container {
+    background-color: white;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 560px; /* Adjust based on your requirements */
+    margin: 0 auto; /* Center the search bar */
+    margin-bottom: 1rem; /* Space between search bar and videos */
+}
+
+.premium-logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 1rem;
+}
+
+.input-container {
+    position: relative;
+    flex-grow: 1;
+}
+
+.search-input {
+    width: 100%;
+}
+
+.search-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    background-color: transparent; /* Set background to transparent */
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 2rem; /* Add padding on the sides */
+    gap: 4rem; /* Increase gap between main video and other videos */
+    margin-left: 2rem; /* Add margin to create space from the left border */
+}
+
+.main-video {
+    flex: 1;
+    width: 1000px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    margin-right: 2rem; /* Add space between main video and other videos */
+}
+
+.main-video h2,
+.video h3 {
+    font-weight: bold;
+}
+
+.other-videos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem; /* Adjust margin as needed to align with the main video */
+}
+
+.video {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem; /* Add spacing between videos */
+}
+
+.thumbnail-button {
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    background-color: transparent; /* Set background to transparent */
+}
+
+.thumbnail-image {
+    width: 100px; /* Adjust thumbnail width as needed */
+    height: 56.25px; /* Adjust thumbnail height based on aspect ratio (16:9) */
+    margin-right: 1rem; /* Add spacing between thumbnail and title */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+}
+
+.video h3 {
+    margin: 0;
+    font-weight: bold;
+    word-wrap: break-word; /* Wrap long titles to multiple lines */
+    overflow: hidden; /* Hide any overflowing text */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Show up to 2 lines */
+    -webkit-box-orient: vertical;
+}

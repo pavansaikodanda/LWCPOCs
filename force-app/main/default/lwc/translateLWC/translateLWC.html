@@ -1,11 +1,46 @@
 <template>
-    <lightning-combobox
-            name="progress"
-            label="Status"
-            value={value}
-            placeholder="Select Progress"
-            options={options}
-            onchange={handleChange} ></lightning-combobox>
+    <lightning-card title="Translate LWC">
+        <lightning-layout multiple-rows="true">
 
-    <p>Selected value is: {value}</p>
+            <lightning-layout-item size="6" padding="around-medium">
+                <lightning-combobox label="Select Language of Text" options={languagesList}
+                    onchange={handleSourceLanguageChange}></lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="around-medium">
+                <lightning-combobox label="Convert Language Text" options={languagesList}
+                    onchange={handleTargetLanguageChange}></lightning-combobox>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <div class="slds-m-bottom_medium">
+                    <lightning-input type="text" label="Enter text" class="textToBeConverted"
+                        placeholder="Enter Text to be converted" maxlength="10000"></lightning-input>
+                </div>
+                <div class="slds-m-bottom_medium">
+                    <lightning-button-icon icon-name="utility:play" alternative-text="Play"
+                        title="Play" onclick={handleSourceLanguageSpeech}></lightning-button-icon>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <div class="slds-m-bottom_medium">
+                    <lightning-button variant="brand" label="Translate"
+                        onclick={handleTranslateLanguage}></lightning-button>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <div class="slds-m-bottom_medium">
+                    <lightning-input type="text" class="ConvertedText" label="Converted Text" value={translatedText} placeholder="Converted Text"
+                        maxlength="10000" readonly></lightning-input>
+                </div>
+                <div class="slds-m-bottom_medium">
+                    <lightning-button-icon icon-name="utility:play" alternative-text="Play"
+                            title="Play" onclick={handleTargetLanguageSpeech}></lightning-button-icon>
+                </div>
+            </lightning-layout-item>
+
+        </lightning-layout>
+    </lightning-card>
 </template>
