@@ -7,13 +7,18 @@ public with sharing class AccountController {
         //                                                 FROM ContentVersion
         //                                                 WHERE FirstPublishLocationId = :parentId ];
 
+        delete [
+                    SELECT ContentDocumentId 
+                    FROM ContentDocumentLink 
+                    WHERE LinkedEntityId = :parentId
+        ];
 
         ContentVersion cv = new ContentVersion(VersionData = EncodingUtil.base64Decode(base64Data),
                                                 Title = fileName,
                                                 PathOnClient = '/'+fileName,
                                                 FirstPublishLocationId = parentId);
         
-        upsert cv;
+        insert cv;
         return cv.Id;
 
     }

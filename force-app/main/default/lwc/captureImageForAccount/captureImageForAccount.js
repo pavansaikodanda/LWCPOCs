@@ -60,7 +60,7 @@ export default class CaptureImageForAccount extends LightningElement {
     async saveImage() {
         this.captureImage();
         let base64Data = this.capturedImage.replace(/^data:image\/(png|jpg);base64,/, "");
-        saveAccountImage({ parentId: this.recordId, base64Data: base64Data, contentType: 'image/png', fileName: 'captured-image.png' })
+        saveAccountImage({ parentId: this.recordId, base64Data: base64Data, contentType: 'image/png', fileName: 'test.png' })
         .then(result => {
             this.dispatchEvent(
                 new ShowToastEvent({
@@ -69,7 +69,9 @@ export default class CaptureImageForAccount extends LightningElement {
                     variant: 'success',
                 }),
             );
+            window.location.reload();
         })
+        
         .catch(error => {
             this.dispatchEvent(
                 new ShowToastEvent({
@@ -80,6 +82,8 @@ export default class CaptureImageForAccount extends LightningElement {
             );
         });
         this.isModalOpen = false;
+        
+       
     }
 
     retakeImage() {
