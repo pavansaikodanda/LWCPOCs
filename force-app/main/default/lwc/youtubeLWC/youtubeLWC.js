@@ -38,5 +38,12 @@ export default class YoutubeLWC extends LightningElement {
         this.mainVideoTitle = video.snippet.title;
         this.mainVideoDescription = video.snippet.description;
     }
+
+    handleKeyDown(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            this.handleYoutubeSearch();
+        }
+    }
     
 }

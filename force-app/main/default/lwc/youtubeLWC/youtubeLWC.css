@@ -28,9 +28,9 @@
 
 .search-button {
     position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 10px;
+    top: 70%;
+    transform: translateY(-70%);
     border: none; /* Remove border */
     padding: 0; /* Remove padding */
     background-color: transparent; /* Set background to transparent */
