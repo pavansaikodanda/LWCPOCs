@@ -1,0 +1,80 @@
+<template>
+    <div class="aob_card_container container">
+        <div class="slds-grid ">
+            <div class="slds-large-size_1-of-2">
+                <p class="Title"><span style="color: red">*</span>ADD A SELFIE</p>
+                <div class="iconwithtext">
+                    <div class=" photocapture">
+                        <img class="imageicon" src={contactIcon}>
+                    </div>
+                    <div class="instructions">
+                        <ul> Note:
+                            <li> 1. Both <b>ears</b> should be visible </li>
+                            <li> 2. Both <b>eyes</b> should be open and visible </li>
+                             <li>3. The image must be <b>bright and clear</b></li>
+                            <li> 4. Max 4MB JPEG or image (jpeg.png.jpg) can be uploaded</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dflex">
+                    <a><button class="selfiebutton"><img src={cloudupload}>UPLOAD SELFIE</button></a>
+                    <a><button class="selfiebutton" onclick={initCamera}><img src={frameIcon}>TAKE A SELFIE</button></a>
+                </div>
+            </div>
+
+            <div class="slds-large-size_1-of-2">
+                <p class="Title"><span style="color: red">*</span>UPLOAD A SIGNATURE</p>
+                <div class="iconwithtext">
+                    <div class=" photocapture">
+                        <img src={penIcon}>
+                    </div>
+                    <div class=" instructions">
+                        <ul> Note:
+                            <li> 1. Image Must be <b>clear</b></li>
+                            <li>2. Image must <b>not be cut-off</b></li>
+                            <li>3. Use <b>Black</b> or <b> Blue ink</b></li>
+                            <li>4. Max 4MB JPEG or image (jpeg.png.jpg) can be uploaded </li>
+                        </ul>
+                    </div>
+                </div>
+                <a><button class="selfiebutton"><img src={cloudupload}>UPLOAD SIGNATURE</button></a>
+            </div>
+  
+
+        <template if:true={isModalOpen}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Capture Image</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <template if:false={isImageCaptured}>
+                            <video class="videoElement" autoplay></video>
+                        </template>
+                        <template if:true={isImageCaptured}>
+                            <img src={capturedImage} alt="Captured Image" />
+                        </template>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Retake" onclick={retakeImage}></lightning-button>
+                        <lightning-button variant="brand" label="Ok" onclick={saveImage}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <canvas class="slds-hide canvas"></canvas>
+
+        </div>
+       <!-- <div class="checkbox">
+         <lightning-input class="consent" type="checkbox" data-name="ConsentBox"
+            data-id="checkbox" message-when-unchecked="Please check this box to continue"
+            onchange={genericCheckboxChange}>
+        </lightning-input><span class="checkboxtext">I confirm that the information given above is accurate.</span>
+       </div> -->
+
+    </div>
+
+
+</template>

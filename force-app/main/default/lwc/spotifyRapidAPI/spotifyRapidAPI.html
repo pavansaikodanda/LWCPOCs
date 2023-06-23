@@ -1,0 +1,54 @@
+<template>
+    <div class="container slds-grid">
+        <div class="left-content slds-col slds-size_1-of-2">
+            <div class="input-container">
+                <lightning-input variant="label-hidden" class="search-input" type="text" placeholder="Spotify Search..."
+                    maxlength="10000" onchange={updateSearchText} onkeydown={handleKeyDown}></lightning-input>
+                <lightning-button-icon icon-name="utility:search" variant="bare" onclick={handleSpotify}
+                    class="slds-input__icon slds-input__icon_right search-button"></lightning-button-icon>
+            </div>
+            <div class="spotify-cards-container spotify-cards-container slds-grid slds-wrap">
+                <template for:each={albums} for:item="item">
+                    <div key={item.data.uri}>
+                        <h3>{item.data.name}</h3>
+                        <p>Artists:</p>
+                        <ul>
+                            <template for:each={item.data.artists.items} for:item="artist">
+                                <li key={artist.uri}>{artist.profile.name}</li>
+                            </template>
+                        </ul>
+                        <p>Release Year: {item.data.date.year}</p>
+                        <ul>
+                            <li>
+                                <button data-id={item.data.uri} data-image={item.data.largestImageUrl} onclick={handleAlbumClick}>
+                                    <img src={item.data.largestImageUrl} alt="Album Cover" data-image={item.data.largestImageUrl} data-id={item.data.uri}></img>
+                                </button>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="right-content slds-col slds-size_1-of-2">
+            <template if:true={selectedAlbum}>
+                <img src={selectedAlbum.data.mediumImageUrl} alt="Album Cover" class="selected-album-cover" />
+            </template>
+                <template if:true={albumTracks}>
+                    <h2>Tracks</h2>
+                    <ul>
+                        <template for:each={albumTracks} for:item="track" for:index="index">
+                            <li key={track.track.uri}>
+                                <div data-preview-url={track.previewUrl} onclick={handleTrackClick}>
+                                    {track.track.name}
+                                    <div class="audio-container">
+                                        <audio src={track.previewUrl} controls></audio>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+            </div>
+        </div>
+</template>

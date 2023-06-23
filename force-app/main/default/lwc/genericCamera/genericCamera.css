@@ -1,0 +1,160 @@
+.Title {
+    margin-top: 50px;
+    font-weight: 600;
+    font-family: 'BentonSans';
+}
+
+.aob_card_container {
+    box-shadow: none !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.photocapture {
+    width: 56%;
+    height: 200px;
+    background-color: #3C4B6C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photocapture img {
+    height: 44%;
+    width: 36%;
+}
+
+.checkbox {
+    display: flex;
+    margin-top: 40px;
+}
+
+.dflex {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.selfiebutton {
+    width: 43%;
+    height: 37px;
+    margin: 10px 0px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background-color: #0089ff;
+    font-size: 13px;
+}
+
+.selfiebutton img {
+    padding-right: 12px;
+    width: 30px;
+}
+
+.instructions ul {
+    width: 86%;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-top: 45px;
+}
+
+.iconwithtext {
+    display: flex;
+
+}
+
+input[type='checkbox'] {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-self: center;
+}
+
+label {
+    margin-top: 80px;
+    display: flex;
+}
+
+@media (max-width:1400px) {
+    .photocapture {
+        width: 68%;
+    }
+}
+
+@media (max-width:1024px) {
+    .photocapture {
+        width: 61%;
+    }
+}
+
+@media (max-width:1200px) {
+    .photocapture {
+        width: 90%;
+    }
+
+    .selfiebutton {
+        font-size: 11px;
+        width: 49%;
+    }
+
+    .instructions {
+        width: 94%;
+
+    }
+
+    li {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:999px) {
+    .slds-grid {
+        display: block;
+    }
+
+    .photocapture {
+        width: 70%
+    }
+
+    .selfiebutton {
+        width: 43%;
+    }
+
+    .container{
+        width: 100%;
+    }
+}
+
+@media (max-width:576px) {
+ .container{
+        width: 90%;
+    }
+    .selfiebutton {
+        width: 70%;
+   }
+   .photocapture {
+        width: 100%;
+    }
+}
+@media (max-width:767px) {
+    .photocapture {
+        width: 100%;
+    }
+   .iconwithtext{
+    display: block;
+   }
+   .selfiebutton {
+        width: 76%;
+   }
+   .checkboxtext{
+    margin-left: 20px;
+   }
+ .container{
+        width: 100%;
+    }
+}
+@media (max-width:400px) {
+     .selfiebutton {
+        width: 100%;
+   }
+}

@@ -13,7 +13,8 @@ export default class TranslateLWC extends LightningElement {
   targetLanguageAvailable = false;
   sourceLanguageAvailable = false;
 
-  connectedCallback () {
+  constructor () {
+    super();
     fetch(RAIPIDAPI_TRANSLATE_LANG_URL + 'getLanguages', {
       method: 'GET',
       headers: {
