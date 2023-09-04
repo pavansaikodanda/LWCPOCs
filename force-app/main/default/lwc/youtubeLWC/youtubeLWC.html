@@ -2,8 +2,13 @@
     <div class="outer-container">
         <lightning-card>
             <div class="search-container">
-                <img src="https://thumbs.dreamstime.com/b/youtube-premium-logo-video-sharing-website-icon-eps-vector-illustration-258896955.jpg?w=1600" class="premium-logo" alt="Youtube Premium Logo">
-                <div class="input-container">
+                <div class="image-container">
+                    <img src="https://thumbs.dreamstime.com/b/youtube-premium-logo-video-sharing-website-icon-eps-vector-illustration-258896955.jpg?w=1600" class="premium-logo animate-image" alt="Youtube Premium Logo">
+                    <!-- <div class="balloon balloon1"></div>
+                    <div class="balloon balloon2"></div> -->
+                    <!-- Add more balloons as needed -->
+                  </div>
+                                  <div class="input-container">
                     <lightning-input variant="label-hidden" class="search-input" type="text" placeholder="       Youtube Search..." maxlength="10000" onchange={updateSearchText} onkeydown={handleKeyDown}></lightning-input>
                     <lightning-button-icon icon-name="utility:search" variant="bare" onclick={handleYoutubeSearch} class="slds-input__icon slds-input__icon_right search-button"></lightning-button-icon>
                 </div>

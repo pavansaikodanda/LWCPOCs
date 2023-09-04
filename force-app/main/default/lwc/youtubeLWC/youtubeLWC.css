@@ -24,6 +24,7 @@
 
 .search-input {
     width: 100%;
+    border-radius: 100px;
 }
 
 .search-button {
@@ -93,3 +94,48 @@
     -webkit-line-clamp: 2; /* Show up to 2 lines */
     -webkit-box-orient: vertical;
 }
+
+.animate-image {
+    transition: transform 1s ease-in-out;
+  }
+  
+  .animate-image:hover {
+    transform: rotate(360deg);
+  }
+  .balloon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    animation: balloonFloat 3s ease-in-out infinite;
+  }
+  
+  .balloon1 {
+    top: 50px;
+    left: 100px;
+  }
+  /* .image-container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+  }
+  
+  .balloon2 {
+    top: 80px;
+    left: 200px;
+  }
+  
+  @keyframes balloonFloat {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  } */
+  
+  /* Adjust top and left properties for each balloon */
