@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-card">
+        <div class="slds-box">
+            <lightning-button variant="brand" label="QR Code Scanner" title="QR Scan" 
+                onclick={handleBarcodeClick} class="slds-m-left_x-small"> 
+            </lightning-button>
+            <p class="slds-m-left_x-small"> 
+                {AId}
+            </p>
+            <p class="slds-m-left_x-small"> 
+                {scannedRecord}
+            </p>
+        </div> 
+    </div>
+</template>

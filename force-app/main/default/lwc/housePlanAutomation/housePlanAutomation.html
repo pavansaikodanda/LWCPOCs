@@ -1,0 +1,14 @@
+<template>
+    <div>
+        <label for="length">Length:</label>
+        <input type="number" id="length" value={length} oninput={handleLengthChange} />
+        <br />
+        <label for="breadth">Breadth:</label>
+        <input type="number" id="breadth" value={breadth} oninput={handleBreadthChange} />
+        <br />
+        <button label='create' onclick={createShape}>Create Shape</button>
+    </div>
+    <template if:true={showPlan}>
+        <div style={boxStyle}></div>
+    </template>
+</template>
