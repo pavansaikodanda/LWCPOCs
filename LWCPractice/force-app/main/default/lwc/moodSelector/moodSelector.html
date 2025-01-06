@@ -1,0 +1,16 @@
+<template>
+    <div class="container" style={backgroundStyle}>
+        <h1>Select Your Mood</h1>
+        <lightning-combobox
+            label="Mood"
+            value={selectedMood}
+            placeholder="Select a mood"
+            options={moodOptions}
+            onchange={handleMoodChange}>
+        </lightning-combobox>
+
+        <div class="emoji-container">
+            <span class="emoji">{emoji}</span>
+        </div>
+    </div>
+</template>

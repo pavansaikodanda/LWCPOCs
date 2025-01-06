@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Task List">
+        <div class="slds-p-around_medium">
+            <ul class="slds-has-dividers_around-space">
+                <template for:each={tasks} for:item="task">
+                    <li key={task.id} class="slds-item">
+                        <lightning-input 
+                            type="checkbox"
+                            label={task.name}
+                            checked={task.completed}
+                            data-task-id={task.id}
+                            onchange={handleTaskToggle}
+                        ></lightning-input>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>

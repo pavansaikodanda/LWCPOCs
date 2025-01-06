@@ -1,0 +1,17 @@
+<template>
+    <div class="dynamic-container">
+        <template if:true={error}>
+            <div class="slds-text-color_error">
+                {error}
+            </div>
+        </template>
+        
+        <template for:each={components} for:item="component">
+            <div key={component.componentName} class="slds-m-around_medium">
+                <lwc:component 
+                    lwc:is={component.constructor}
+                ></lwc:component>
+            </div>
+        </template>
+    </div>
+</template>
